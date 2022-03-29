@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2? display=swap" rel="stylesheet">
+    <title>automatizacion</title>
+    <style>
+        :root {
+            --very-light-pink: #C7C7C7;
+            --text-input-field: #f7f7f7;
+            --rojito: #ff0000;
+            --white: #FFFFFF;
+            --black: #000000;
+            --sm: 14px;
+            --md: 16px;
+            --lg: 20px;
+        }
+        nav{
+            display: flex;
+            justify-content: space-between;
+            padding: 0 24px ;
+            border-bottom: 1px solid var(--very-light-pink);
+        }
+        .menu{
+            display: none;
+        }
+        .logo-nav{
+            width: 100px;
+        }
+        .navbar-left ul,
+        .navbar-right ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            height:60px;
+        }
+        .navbar-left{
+            display: flex;
+
+        }
+        .navbar-left ul{
+
+            margin-left: 12px;
+        }
+        .navbar-left ul li a,
+        .navbar-right ul li a {
+            text-decoration: none;
+            color: var(--very-light-pink);
+            border: 1px solid var(--white);
+            padding: 8px;
+            border-radius: 8px;
+        }
+        .navbar-left ul li a:hover,
+        .navbar-right ul li a:hover {
+            color: var(--text-hospital-green);
+            border: 1px solid var(--text-hospital-green)
+        }
+        .navbar-email{
+            color: var(--very-light-pink);
+            font-size: var(--sm);
+            margin-right: 12px;
+        }
+
+        .navbar-shopping-cart {
+            position: relative;
+        }
+        .navbar-shopping-cart div{
+            width: 16px;
+            height: 16px;
+            background-color: var(--text-hospital-green);
+            border-radius: 50%;
+            font-size: var(--sm);
+            font-weight: bold;
+            position: absolute;
+            top: -6px;
+            right: -3px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+        body {
+            margin: 0;
+            font-family: 'Arenas movedizas', sans-serif;
+            
+        }
+        .menu {
+            width: 100%;
+            height: 100vh;
+            display: grid;
+            place-items: center;
+        }
+        
+        .form-conteiner{
+            display: grid;
+            grid-template-rows: auto 1fr auto;
+            width: 350px;
+            padding: 40px; 
+        }
+        
+        .logo {
+            width: 150px;
+            margin-bottom: 16px;
+            justify-self: center;
+            display: none;
+          
+
+        }
+        .form {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 12px;
+            
+        }
+        form a{
+            color: var(--rojito);
+            font-size: var(--sm);
+            text-align: center;
+            text-decoration: none;
+            margin-bottom: 52px;
+        }
+        .titulo{
+            font-size: var(--lg);
+            color: var(--rojito);
+            font-weight: bold;
+            margin-bottom: 32px;
+            text-align: center;
+
+        }
+        .label {
+            font-size: var(--sm);
+            font-weight: bold;
+            margin-bottom: 8px;
+            margin-top: 4px;
+            margin-left: 4px;
+            
+        }
+        .input{
+            background-color: var(--text-input-field);
+            border: none;
+            border-radius: 12px;
+            height: 30px;
+            font-size: var(--md);
+            padding: 8px;
+        }
+
+        .primary-button{
+            margin-top: 16px;
+            background-color: var(--rojito);
+            border: none;
+            border-radius: 8px;
+            color: var(--white);
+            width: 100%;
+            text-align: center;
+            cursor: pointer;
+            font-size: var(--md);
+            font-weight: bold;
+            height: 40px;
+
+        }
+        
+        
+        .secondary-button{
+            background-color: var(--white);
+            border: none;
+            border-radius: 8px;
+            border: 1px solid var(--rojito);
+            color: var(--rojito);
+            width: 100%;
+            cursor: pointer;
+            font-size: var(--md);
+            font-weight: bold;
+            height: 40px;
+
+        }
+        .login-button{
+            margin-top: 14px;
+            margin-bottom: 30px;
+        }
+        ul{
+            list-style: none;
+            padding: 4px;
+        }
+        .list-nav{
+            font-weight: bold;
+            color: var(--rojito);
+        }
+
+        .resultado{
+            font-weight: bold;
+            color: var(--rojito);
+        }
+        footer{
+            padding: 0 24px ;
+            border-top: 1px solid var(--very-light-pink);
+            ;
+        }
+        .text-footer{
+            text-align: center;
+            color: gray;
+            font-size: var(--sm);
+        }
+        
+        @media (max-width:640px) {
+            .logo{
+                display: block;
+            }
+            .secondary-button{
+                width: inherit;
+                
+                bottom: 0;
+                margin-bottom: 16px;
+                
+            }
+            .logo-nav{
+                display: none;
+            }
+            
+        }
+    </style>
+</head>
+<body>
+
+
+    <nav>
+        
+        <div class="navbar-left">
+            
+            <ul class="list-nav">
+                <li>
+                    <a href="https://api.whatsapp.com/send?phone=59160260394">consultas</a>
+                </li>
+                <li>
+                    <a href="https://www.google.com/maps/place/21%C2%B032'07.7%22S+64%C2%B041'33.4%22W/@-21.5355447,-64.6930018,19.5z/data=!4m5!3m4!1s0x0:0x9c4e013d6ded31ed!8m2!3d-21.5354811!4d-64.6926232?hl=en">dirección</a>
+                </li>
+                <li>
+                    <a href="https://ucbtja-my.sharepoint.com/:w:/g/personal/pedro_anze_ucb_edu_bo/EfLuL8r5Kt1Kn0ZnkorMa1kBhHtdw6b2trmpG_2W4-dxsQ?e=XjYYR1">estudio de colas</a>
+                </li>
+                <li>
+                    <a href="https://www.minitab.com/es-mx/">minitab</a>
+                </li>
+
+            </ul>
+        </div>
+        <div class="navbar-right">
+            <ul>
+                <li class="navbar-shopping-cart">
+                    <img src="https://www.elanet-se.org/wp-content/uploads/2020/11/logo-UCB-TARIJA-414x200.png" alt="logo" class = "logo-nav">
+                    
+                </li>
+            </ul>
+
+
+        </div>
+
+    </nav>
+
+    
+    <div class ="menu">
+        
+        <div class = "form-conteiner">
+            <p class="titulo">Centro de Salud Virgen de Guadalupe</p>
+            <img src="https://www.elanet-se.org/wp-content/uploads/2020/11/logo-UCB-TARIJA-414x200.png" alt="logo" class = "logo">
+            <form action="/" class = "form">
+                <label for="number" class = "label">Desviacion de Lambda</label>
+                <input type="number" placeholder="Desviacion de λ" class = "input" id="desLamda">
+
+                <label for="number" class = "label">Desviacion de μ</label>
+                <input type="number" placeholder="desviacion de μ" class = "input" id="desU">
+
+                <label for="number" class = "label">Lambda (λ)</label>
+                <input type="number" placeholder="λ" class = "input" id="lamda">
+
+                <label for="number" class = "label">μ</label>
+                <input type="number" placeholder="μ" class = "input" id ="u">
+
+                <label for="number" class = "label">Cantidad de Servidores en paralelo</label>
+                <input type="number" placeholder="c" class = "input" id="c">
+             
+                <input type= "button" id="resultado" class="primary-button secondary-button" value="Calcular">
+            </form>
+            <div>
+                <ul>
+                    <li>
+                        <p class="resultado">RESULTADOS:</p>
+                    </li>
+                    <li>
+                        <p id="p">Congestión del sistema con paramatros (RO)</p>
+                    </li>
+                    <li>
+                        <p id="wq"> Tiempo de espera de cola (Wq)</p>
+                    </li>
+                    <li>
+                        <p id="lq">Longitud esperada de la cola (Lq)</p>
+                    </li>
+                    <li>
+                        <p id="w">Tiempo de espera en el sistema (W)</p>
+                    </li>
+                    <li>
+                        <p id="l">numero esperado de clientes en el sistema (L)</p>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+  
+    </div>
+    <footer>
+        <p class="text-footer">Fernando Ichazo - Pedro Anze - Erick Balcazar - Luis Barja</p>
+        
+    </footer>
+
+    <script >
+        var calP = document.getElementById("p");
+        var calWq = document.getElementById("wq");
+        var calLq = document.getElementById("lq");
+        var calW = document.getElementById("w");
+        var calL = document.getElementById("l");
+        var res = document.getElementById("resultado");
+        res.addEventListener("click", mostrarDatos);
+        
+        
+        
+        function mostrarDatos() {
+            calP.innerHTML = "RO  = "+valorP().toFixed(5);
+            calWq.innerHTML = "Wq = "+valorWq().toFixed(5);
+            calLq.innerHTML = "Lq = "+valorLq().toFixed(5);
+            calW.innerHTML = "W = "+valorW().toFixed(5);
+            calL.innerHTML = "L = "+valorL().toFixed(5);
+            console.log("test - llegan datos");
+        }
+        function valorP (){
+            var lamda = parseFloat(document.getElementById("lamda").value);
+            var c = parseFloat(document.getElementById("c").value);
+            var u = parseFloat(document.getElementById("u").value);
+            var p = ((lamda)/(c*u));
+            console.log("p ",p);
+            return p
+        }
+        
+        function valorWq (){
+            var lamda = parseFloat(document.getElementById("lamda").value);
+            var c = parseFloat(document.getElementById("c").value);
+            var u = parseFloat(document.getElementById("u").value);
+            var desLamda = parseFloat(document.getElementById("desLamda").value);
+            var desU = parseFloat(document.getElementById("desU").value);
+            var p = valorP();
+            console.log(lamda,c,u,desLamda,desU, p);
+            var raiz = (Math.sqrt((2*c)+2)-1);
+            var wq = ((((lamda*lamda)*(desLamda*desLamda))+((u*u)*(desU*desU)))/2)*((Math.pow(p,raiz))/(c*(1-p)))*(1/u);
+            //var wq = ((Math.pow(valorP(),raiz))/(c*(1-valorP())));
+            //var wq = ((((lamda*lamda)*(desLamda*desLamda))+((u*u)*(desU*desU)))/2)*((Math.pow(valorP(),(Math.sqrt(2*c+2)-1)))/(c*(1-valorP())))*(1/u);
+        
+            console.log("wq",wq);
+            return wq
+        }
+        
+        function valorLq (){
+        
+            var lamda = parseFloat(document.getElementById("lamda").value);
+            var wq = valorWq();
+            /*
+            var c = parseFloat(document.getElementById("c").value);
+            var u = parseFloat(document.getElementById("u").value);
+            var desLamda = parseFloat(document.getElementById("desLamda").value);
+            var desU = parseFloat(document.getElementById("desU").value);
+            console.log(lamda,c,u,desLamda,desU, p);
+            var raiz = (Math.sqrt((2*c)+2)-1);
+            var lq = ((((lamda*lamda)*(desLamda*desLamda))+((u*u)*(desU*desU)))/2)*((Math.pow(p,raiz))/(p*(1-p)));
+            */ 
+            var lq = lamda*wq;
+            console.log("lq ",lq);
+            return lq
+        }
+        
+        function valorW (){
+            var u = parseFloat(document.getElementById("u").value);
+            /*
+            var lamda = parseFloat(document.getElementById("lamda").value);
+            var c = parseFloat(document.getElementById("c").value);
+            var desLamda = parseFloat(document.getElementById("desLamda").value);
+            var desU = parseFloat(document.getElementById("desU").value);
+            var p = valorP();
+            console.log(lamda,c,u,desLamda,desU, p);
+            var raiz = (Math.sqrt((2*c)+2)-1);
+            var w = (1+((((lamda*lamda)*(desLamda*desLamda))+((u*u)*(desU*desU)))/2)*((Math.pow(p,raiz))/(c*(1-p))))*(1/u);
+            */
+            var wq = valorWq();
+            var w = wq+(1/u);
+            console.log("w ",w);
+            return w
+        }
+        function valorL(){
+            var lamda = parseFloat(document.getElementById("lamda").value);
+            var w = valorW();
+            var l = lamda*w;
+            return l
+        }
+        
+    </script>
+</body>
+</html>
