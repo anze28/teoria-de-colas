@@ -191,12 +191,14 @@
             font-weight: bold;
             color: var(--rojito);
         }
-
         .resultado{
+            display: grid;
             font-weight: bold;
             color: var(--rojito);
+            margin-bottom: 5px;
         }
         footer{
+            display: flex;
             padding: 0 24px ;
             border-top: 1px solid var(--very-light-pink);
             ;
@@ -286,31 +288,35 @@
                 <input type= "button" id="resultado" class="primary-button secondary-button" value="Calcular">
             </form>
             <div>
-                <ul>
-                    <li>
-                        <p class="resultado">RESULTADOS:</p>
-                    </li>
-                    <li>
-                        <p id="p">Congestión del sistema con paramatros (RO)</p>
-                    </li>
-                    <li>
-                        <p id="wq"> Tiempo de espera de cola (Wq)</p>
-                    </li>
-                    <li>
-                        <p id="lq">Longitud esperada de la cola (Lq)</p>
-                    </li>
-                    <li>
-                        <p id="w">Tiempo de espera en el sistema (W)</p>
-                    </li>
-                    <li>
-                        <p id="l">numero esperado de clientes en el sistema (L)</p>
-                    </li>
-                </ul>
-            </div>
+
 
         </div>
   
+    </div >
+    <div class ="resultados-finales">
+        <ul>
+            <li>
+                <p class="resultado">RESULTADOS:</p>
+            </li>
+            <li>
+                <p id="p">Congestión del sistema con paramatros (RO)</p>
+            </li>
+            <li>
+                <p id="wq"> Tiempo de espera de cola (Wq)</p>
+            </li>
+            <li>
+                <p id="lq">Longitud esperada de la cola (Lq)</p>
+            </li>
+            <li>
+                <p id="w">Tiempo de espera en el sistema (W)</p>
+            </li>
+            <li>
+                <p id="l">numero esperado de clientes en el sistema (L)</p>
+            </li>
+        </ul>
     </div>
+
+
     <footer>
         <p class="text-footer">Fernando Ichazo - Pedro Anze - Erick Balcazar - Luis Barja</p>
         
